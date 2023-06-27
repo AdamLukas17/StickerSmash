@@ -33,13 +33,18 @@ export default function App() {
         <ImageViewer 
         placeholderImageSource={PlaceholderImage}
         selectedImage={selectedImage} />
+        {showAppOptions ? (
       </View>
+        ) : (
+{/* BUTTONS */}
+<View style={styles.footerContainer}>
+<Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+<Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
+</View>
+        )}
+      
 
-      {/* BUTTONS */}
-      <View style={styles.footerContainer}>
-        <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
-        <Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
-      </View>
+      
       {/* Handles the statusBar on device */}
       <StatusBar style="auto" />
     </View>
