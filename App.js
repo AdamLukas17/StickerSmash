@@ -34,12 +34,15 @@ export default function App() {
         placeholderImageSource={PlaceholderImage}
         selectedImage={selectedImage} />
       </View>
+      {showAppOptions ? (
+        <View />
+      ) : (
         {/* BUTTONS */}
         <View style={styles.footerContainer}>
           <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
-<Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
-</View>
-    
+          <Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
+        </View>
+    )}
       {/* Handles the statusBar on device */}
       <StatusBar style="auto" />
     </View>
